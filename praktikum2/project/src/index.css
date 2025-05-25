@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream font-body text-brown-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md;
+  }
+  
+  .btn-primary {
+    @apply text-cream bg-brown-700 hover:bg-brown-800;
+  }
+  
+  .btn-secondary {
+    @apply text-brown-900 bg-gold-400 hover:bg-gold-500;
+  }
+  
+  .section-title {
+    @apply mb-8 text-3xl font-bold text-center md:text-4xl text-brown-900;
+  }
+  
+  .section-subtitle {
+    @apply mb-12 text-lg text-center text-brown-600 max-w-2xl mx-auto;
+  }
+  
+  .menu-item {
+    @apply relative overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-md hover:shadow-lg;
+  }
+  
+  .menu-image {
+    @apply object-cover w-full h-48 transition-transform duration-500 hover:scale-105;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.cart-item-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.cart-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in;
+}
+
+.cart-item-exit {
+  opacity: 1;
+}
+
+.cart-item-exit-active {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 300ms ease-out;
+}
